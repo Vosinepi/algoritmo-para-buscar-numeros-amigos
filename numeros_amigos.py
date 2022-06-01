@@ -1,6 +1,22 @@
+import sys
+
+
+if len(sys.argv) < 3:
+    print("te falto poner un numero")
+    sys.exit(1)
+
+try:
+    numero_1 = int(sys.argv[1])
+    numero_2 = int(sys.argv[2])
+except:
+    print("lo ingresado no es un numero")
+    sys.exit(1)
+
+
 def numeros_amigos(inicio, fin):
     """
-    It takes a range of numbers and prints out the pairs of amicable numbers within that range
+    It takes a range of numbers and prints out the pairs
+    of amicable numbers within that range
 
     :param inicio: the starting number
     :param fin: the number you want to stop at
@@ -32,9 +48,13 @@ def numeros_amigos(inicio, fin):
                 contador_2 += 1
         suma_divisores_2 = sum(divisores_2)
 
-        # Checking if the sum of the divisors of the second number is equal to the first number. If it
-        # is, it checks if the first number is not equal to the second number. If it is not, it checks
-        # if the first number is less than the second number. If it is, it prints out the pair of
+        # Checking if the sum of the divisors of the second number is
+        # equal to the first number. If it is,
+        # it checks if the first number
+        # is not equal to the second number.
+        # If it is not, it checks
+        # if the first number is less than the second number.
+        # If it is, it prints out the pair of
         # numbers.
         if suma_divisores_2 == numero:
             if numero != numero_2:
@@ -42,4 +62,4 @@ def numeros_amigos(inicio, fin):
                     print(numero, numero_2)
 
 
-numeros_amigos(1, 500)
+numeros_amigos(numero_1, numero_2)
